@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>St Valentine</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/heart-fly.ico" />
+  </head>
+  <!-- <script>
+    document.addEventListener("keydown", function (e) {
+      if (e.repeat) return;
+
+      document.body.classList.add("fade-out");
+
+      setTimeout(() => {
+        window.location.href = "question.html";
+      }, 600);
+    });
+  </script> -->
+  <script>
+    let iniciado = false;
+
+    function iniciar() {
+      if (iniciado) return;
+      iniciado = true;
+
+      document.body.classList.add("fade-out");
+
+      setTimeout(() => {
+        window.location.href = "question.html";
+      }, 600);
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (!e.repeat) iniciar();
+    });
+
+    document.addEventListener("touchstart", iniciar);
+    document.addEventListener("click", iniciar);
+  </script>
+
+  <body>
+    <!-- <audio
+      id="music"
+      src="img/Photograph (Instrumental) - Ed Sheeran.mp3"
+      loop
+      autoplay
+    ></audio> -->
+    <div class="back-video">
+      <video
+        src="img/heart.mp4"
+        autoplay="true"
+        muted="true"
+        loop="true"
+      ></video>
+    </div>
+    <div id="st-valentine">
+      <img src="img/guau.png" alt="Guau" />
+      <h1>Hi princess, i have a question for u</h1>
+      <br />
+      <h3>Presiona cualquier tecla o toca la pantalla para comenzar...</h3>
+      <br />
+    </div>
+  </body>
+</html>
